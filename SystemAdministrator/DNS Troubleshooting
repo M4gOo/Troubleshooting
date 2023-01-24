@@ -1,0 +1,7 @@
+
+
+temporary fix use Google public DNS 
+sudo vi /etc/resolv.conf 
+and add
+nameserver 8.8.8.8
+
