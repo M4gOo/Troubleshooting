@@ -1,0 +1,14 @@
+
+disable direct root login through SSH   (sshd != ssh)
+
+sshd_config 
+  sudo vi /etc/ssh/sshd_config
+
+change yes to no
+# Authentication:
+PermitRootLogin no  (uncomment and change yes to no)
+
+restart the service
+sudo systemctl restart sshd 
+
+
