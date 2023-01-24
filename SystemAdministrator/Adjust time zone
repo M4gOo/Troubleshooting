@@ -1,0 +1,6 @@
+
+commands
+  timedatectl   (check the time zone)
+  cat /etc/localtime
+  sudo timedatectl set-timezone <your_time_zone>
+  sudo ln  -sf /usr/share/zoneinfo/zoneinfo /etc/localtime   (best way to keep update)
