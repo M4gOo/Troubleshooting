@@ -1,0 +1,16 @@
+
+check using 
+  who -r
+  runlevel
+  
+# To view current default target, run:
+# systemctl get-default
+#
+# To set a default target, run:
+# systemctl set-default TARGET.target (multi-user.target, graphical.target)
+
+change to GUI
+  sudo systemctl set-default graphical.target
+
+then reboot
+  sudo reboot
