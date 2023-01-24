@@ -1,0 +1,10 @@
+
+/bin/false or /bin/nologon
+
+command
+sudo adduser <username> -s /sbin/nologin
+
+check
+cat /etc/passwd | grep <username>
+<username>:x:1002:1002::/home/<username>:/sbin/nologin
+
