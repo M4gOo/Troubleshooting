@@ -1,0 +1,6 @@
+
+
+ temporary user needs a temporary access
+ sudo adduser <username>
+ sudo usermod -e 2022-03-12 <username>
+ chage -l <username>    # check the <username> acc expiry date
