@@ -1,0 +1,12 @@
+
+Set up a password-less authentication:
+
+ssh-keygen
+#check in ~/.ssh
+id_rsa  id_rsa.pub
+
+
+ssh-copy-id <username_for_server1>@server1
+#check in ~/.ssh
+authorized_keys
+
