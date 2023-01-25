@@ -1,0 +1,4 @@
+
+
+useradd -M <username>
+-M for creating a user without a home dir
