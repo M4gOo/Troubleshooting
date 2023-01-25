@@ -1,0 +1,10 @@
+
+ strictly accessed by the group, so only the users in this group can access the folder/directory
+ 
+ sudo mkdir -p  /path/new_dir
+ 
+ sudo chgrp -R <group_have_access> /path/new_dir
+ 
+ sudo chmod 770 /path/new_dir
+ 
+ 
