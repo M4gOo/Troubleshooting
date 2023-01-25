@@ -1,0 +1,3 @@
+
+
+ find /path-of-the-files/ -type f -user <username> -exec cp --parents {} /media \;
