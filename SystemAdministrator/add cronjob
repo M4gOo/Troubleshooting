@@ -1,0 +1,13 @@
+
+install package int the server
+   yum install cronie -y
+   
+start and check cron service
+  systemctl start crond.service
+  systemctl status crond.service
+  
+add task
+  sudo crontab -e
+
+check cronjob for root user 
+  sudo crontab -l
