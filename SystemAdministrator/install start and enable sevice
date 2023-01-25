@@ -1,0 +1,10 @@
+
+ the new application release has some dependencies on the back end
+ packages/services that need to be installed 
+ enabled to start during boot
+ 
+ sudo <yum_apt> -y install <service>
+ 
+ sudo systemctl enable <service>
+ sudo systemctl start <service>
+ sudo systemctl status <service>    #check
