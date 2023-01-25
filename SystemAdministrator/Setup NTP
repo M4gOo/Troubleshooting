@@ -1,0 +1,14 @@
+
+yum install ntp
+
+edit
+  sudo vi /etc/ntp.conf
+  add a server
+    server 19.168.1.1 prefer
+
+systemctl start ntpd
+
+check status
+  ntpq -p
+  
+  
