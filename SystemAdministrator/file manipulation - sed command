@@ -4,3 +4,13 @@
 
 
  sed -i 's/<old_word>/<new_world>/g' /path/to/file.txt
+ 
+ update file pass the -i 
+ global (find all occurrences) replace g/ means. Without the /g only first occurrence is changed
+ To all cases of hello (hello, HELLO, Hello, HEllo, ...) add I ('s/<old_word>/<new_world>/gI')
+ s/ for substitute the found expression <old_word> to <new_world>
+
+to delete all lines where there is the word
+
+sudo sed -i '/<word>/d' /home/BSD_DELETE.txt
+
