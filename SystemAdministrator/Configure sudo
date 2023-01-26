@@ -1,0 +1,10 @@
+
+Provide sudo access to user <username> and password-less sudo
+
+
+#check before and after change. Make sure the user exist
+sudo cat /etc/sudoers |grep <username>   
+
+
+sudo visudo
+<username>    ALL=(ALL)   NOPASSWD:ALL
