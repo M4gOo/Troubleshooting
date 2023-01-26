@@ -1,0 +1,28 @@
+
+Apache and Nginx ( reverse proxy) on the same server
+We have iptables firewall installed on this server 
+
+
+Open all incoming connections to Nginx's port
+Block all incoming connections to Apache's port
+Rules are permanent
+
+
+
+sudo ss -tlnp |grep nginx
+[sudo] password for clint: 
+LISTEN     0      511          *:8093                     *:* 
+
+
+sudo ss -tlnp |grep http
+LISTEN     0      511          *:8087                     *:*                  
+
+
+iptables -A INPUT -p tcp --dport <PORT> -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+iptables -A INPUT -p tcp --dport <PORT> -m conntrack --ctstate NEW -j REJECT
+iptables -R INPUT 5 -p icmp -j REJECT
+service iptables save
+
+checking using another server but in the same network
+telnet <backupserver> <PORT>
+telnet <backupserver> <PORT>
