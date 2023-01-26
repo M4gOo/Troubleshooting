@@ -1,0 +1,3 @@
+
+
+scp /file/to/transfer user@server:/path/in/the/server
