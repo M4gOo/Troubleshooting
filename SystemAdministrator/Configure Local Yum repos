@@ -1,0 +1,49 @@
+
+ use local yum repositories for maintaing packages needed for their servers
+ 
+some packages already present at location /packages/downloaded_rpms/ 
+Configure it to use package's location /packages/downloaded_rpms/
+Install package httpd from this newly created repo and check
+
+
+#check if we have a repo
+yum repolist
+Loaded plugins: fastestmirror, ovl
+Determining fastest mirrors
+repolist: 0
+
+
+#create a repo
+vi /etc/yum.repos.d/local_yum.repo
+
+
+#check the conf for the repo
+cat  /etc/yum.repos.d/local_yum.repo
+
+[local_yum]
+
+name=local_yum
+
+baseurl=file:///packages/downloaded_rpms/
+
+enabled = 1
+
+gpgcheck = 0
+
+
+#check the repo after configuration
+yum repolist
+Loaded plugins: fastestmirror, ovl
+Loading mirror speeds from cached hostfile
+local_yum                                                                                                                              | 2.9 kB  00:00:00     
+local_yum/primary_db                                                                                                                   |  57 kB  00:00:00     
+repo id                                                                     repo name                                                                   status
+local_yum                                                                   local_yum                                                                   55
+repolist: 55
+
+#after install the http package check if it is local (@local_yum)
+yum list httpd
+Loaded plugins: fastestmirror, ovl
+Loading mirror speeds from cached hostfile
+Installed Packages
+httpd.x86_64                                                          2.4.6-90.el7.centos                                                           @local_yum
