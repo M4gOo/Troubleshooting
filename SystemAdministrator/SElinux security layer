@@ -1,0 +1,11 @@
+
+
+SElinux for an additional security layer. 
+
+change the config file to disabled.
+cat /etc/selinux/config | grep SELINUX
+# SELINUX= can take one of these three values:
+SELINUX=disabled
+
+#check SElinux status
+sestatus  
