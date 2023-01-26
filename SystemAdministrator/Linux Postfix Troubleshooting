@@ -1,0 +1,8 @@
+
+
+ Failed to start Postfix Mail Transport Agent.
+
+systemctl status postfix 
+cat /etc/postfix/main.cf 
+  comment in 
+    #inet_interfaces = localhost
