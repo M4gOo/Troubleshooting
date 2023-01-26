@@ -1,0 +1,10 @@
+
+ at location /path/files find out all files (not directories) having .txt extension
+
+copy all files along with their parent dir structure to location /new/path on same server
+
+copy the entire /path/files directory content
+
+
+
+ find /path -type f -name '*.txt' -exec cp --parents {} /new/path \;
