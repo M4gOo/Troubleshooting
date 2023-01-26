@@ -1,0 +1,6 @@
+
+
+ apply string and file manipulation commands
+
+
+ sed -i 's/<old_word>/<new_world>/g' /path/to/file.txt
