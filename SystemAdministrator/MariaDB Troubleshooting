@@ -1,0 +1,8 @@
+
+unable to connect to the database
+
+sudo systemctl start mariadb -l
+Database MariaDB is not initialized, but the directory /var/lib/mysql is not empty, so initialization cannot be done
+
+the name of /var/lib/mysqld -> the name was wrong
+change the name -> mv /var/lib/mysqld/ /var/lib/mysql
