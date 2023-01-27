@@ -1,0 +1,39 @@
+They need to setup some redirects for some URLs
+
+Configure Apache to listen on port 6400.
+
+Configure Apache to add some redirects as mentioned below:
+
+a.) Redirect http://stapp02.stratos.xfusioncorp.com:<Port>/ to http://www.stapp02.stratos.xfusioncorp.com:<Port>/ i.e non www to www. 
+This must be a permanent redirect i.e 301
+
+b.) Redirect http://www.stapp02.stratos.xfusioncorp.com:<Port>/blog/ to http://www.stapp02.stratos.xfusioncorp.com:<Port>/news/. 
+This must be a temporary redirect i.e 302.
+
+#change the port
+/etc/httpd/conf/httpd.conf |grep Listen
+
+
+ vi /etc/httpd/conf.d/main.conf
+
+<VirtualHost *:6400>
+
+ServerName stapp02.stratos.xfusioncorp.com
+
+Redirect 301 / http://www.stapp02.stratos.xfusioncorp.com:6400/
+
+</VirtualHost>
+
+ 
+
+<VirtualHost *:6400>
+
+ServerName www.stapp02.stratos.xfusioncorp.com:6400/blog/
+
+Redirect 302 /blog/ http://www.stapp02.stratos.xfusioncorp.com:6400/news/
+
+</VirtualHost>
+
+
+ systemctl restart httpd
+ curl http://stapp02.stratos.xfusioncorp.com:5003/
