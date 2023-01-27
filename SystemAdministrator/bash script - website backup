@@ -1,0 +1,52 @@
+
+bash scripts to automate different day to day tasks. 
+websites backup. 
+bash script named blog_backup.sh 
+
+
+
+Create a zip archive named xfusioncorp_blog.zip of /var/www/html/blog directory.
+
+Save the archive in /backup/ on App Server 1. Also need to save this backup archive on Backup Server.
+
+Please make sure script won't ask for password while copying the archive file. 
+
+
+ cat  /scripts/ecommerce_backup.sh
+
+#!/bin/bash
+
+zip -r /backup/xfusioncorp_ecommerce.zip /var/www/html/ecommerce
+
+scp /backup/xfusioncorp_ecommerce.zip clint@stbkp01:/backup
+
+
+ssh-keygen
+
+
+ssh-copy-id clint@stbkp01
+
+
+sh ecommerce_backup.sh
+
+
+############confirm
+[steve@stapp02 scripts]$ ll /backup
+
+total 4
+
+-rw-rw-r-- 1 steve steve 623 Jul 18 14:22 xfusioncorp_ecommerce.zip
+
+[steve@stapp02 scripts]$
+
+[steve@stapp02 scripts]$ ssh clint@stbkp01
+
+Last login: Sun Jul 18 14:21:17 2021 from stapp02
+
+[clint@stbkp01 ~]$
+
+[clint@stbkp01 ~]$ ll /backup
+
+total 4
+
+-rw-rw-r-- 1 clint clint 623 Jul 18 14:22 xfusioncorp_ecommerce.zip
