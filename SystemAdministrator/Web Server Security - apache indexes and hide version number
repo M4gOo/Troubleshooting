@@ -1,0 +1,11 @@
+
+
+Apache web server is exposing the version number -> hide the version number of the Apache web server
+
+a website hosted under /var/www/html/beta. Disable the directory browser listing in Apache config
+
+restart the Apache service after making the changes
+
+
+Indexes Includes FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews
+
