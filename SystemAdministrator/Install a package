@@ -1,0 +1,4 @@
+
+serveral new packages need to be installed except for telnet
+
+sudo yum install vsftpd
