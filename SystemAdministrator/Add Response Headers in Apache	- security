@@ -1,0 +1,20 @@
+
+hardening Apache web server 
+add some of the Apache response headers for security purpose
+
+Install httpd package yum 
+configure it to run on 3004 port
+
+Create an index.html file under Apache's default document root i.e /var/www/html and add Welcome to the xFusionCorp Industries!
+
+Configure Apache to enable below mentioned headers:
+X-XSS-Protection header with value 1; mode=block
+X-Frame-Options header with value SAMEORIGIN
+X-Content-Type-Options header with value nosniff
+
+
+
+
+Header always set X-XSS-Protection "1;  mode=block"
+Header set X-Frame-Options: "SAMEORIGIN"
+Header set X-Content-Type-Options nosniff
