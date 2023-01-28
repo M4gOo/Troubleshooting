@@ -1,4 +1,4 @@
-vi /etc/dhcpcd.conf
+sudo vi /etc/dhcpcd.conf
 
 # Example static IP configuration:
 interface eth0                                (uncomment)
