@@ -1,0 +1,29 @@
+
+linux - Debian
+
+ sudo apt install apache2
+ sudo apt install mariadb-server-10.5
+ sudo apt install php-mysql
+ sudo apt install php
+
+# configure the db for wordpress site
+sudo mysql_secure_installation
+    important - change the password, remove the anonymous access and other files everyone can have access
+                login remotely when you haveonly one server for database, but in casae you have database and application in 
+                the same server it is not necessary.
+                
+ #access db
+ sudo mysql -u root -p
+ 
+ # create db
+ MariaDB [(none)]> create database wordpress;
+
+#giving root access to the db
+GRANT ALL PRIVILEGES ON  wordpress. * TO 'root'@'localhost' IDENTIFIED BY '<password>';
+FLUSH PRIVILEGES;
+
+
+# check in the browser using IP address -> it will show the default page for apache.
+
+
+ 
