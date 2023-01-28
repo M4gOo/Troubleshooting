@@ -26,4 +26,21 @@ FLUSH PRIVILEGES;
 # check in the browser using IP address -> it will show the default page for apache.
 
 
+#download wordpress bundle
+sudo wget http://wordpress.org/latest.tar.gz
+sudo tar zxf latest.tar.gz
+sudo cp -r wordpress/* /var/www/html/
+
+#change owner to user www-data
+sudo chown -R www-data: .
+
+#restart the service and go to webbrowser it will see wordpress page 
+ sudo systemctl restart apache2
+
+#install xml curl. Dont forget to restart the service
+sudo apt-get install php7.4-xml
+sudo apt install php7.4-curl
+sudo systemctl restart apache2
+
+
  
