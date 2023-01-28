@@ -1,0 +1,9 @@
+vi /etc/dhcphp.conf
+
+# Example static IP configuration:
+interface eth0                                (uncomment)
+static ip_address=192.168.0.5/24             (uncomment) - choose for your server
+#static ip6_address=fd51:42f8:caae:d92e::ff/64
+static routers=192.168.0.1                    (uncomment) - check router IP
+static domain_name_servers=192.168.0.1 8.8.8.8  (uncomment)
+#static domain_name_servers=fd51:42f8:caae:d92e::1
